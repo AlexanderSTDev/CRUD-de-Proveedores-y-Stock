@@ -15,8 +15,8 @@ export class ProductosService {
   insertar(producto: IProducto): Observable<any> {
     var prod = new FormData();
     prod.append('Nombre', producto.Nombre);
-    prod.append('Precio', producto.Precio);
-    prod.append('Cantidad', producto.Cantidad);
+    prod.append('Precio', producto.Precio.toString());
+    prod.append('Cantidad', producto.Cantidad.toString());
     return this.clientePhp.post(this.urlBase + 'insertar', prod);
   }
   eliminar(id: number): Observable<any> {
